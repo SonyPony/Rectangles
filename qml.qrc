@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>logic/containerLogic.js</file>
+        <file>components_dynamic/gameRectangle.qml</file>
     </qresource>
 </RCC>

@@ -7,6 +7,7 @@ class GameRectangle : public QQuickItem
 {
     Q_OBJECT
 
+    Q_ENUMS(DirEnum)
     Q_PROPERTY(int direction READ direction WRITE setDirection NOTIFY directionChanged)
     Q_PROPERTY(qreal speed READ speed WRITE setSpeed NOTIFY speedChanged)
 
@@ -16,6 +17,8 @@ class GameRectangle : public QQuickItem
 
     public:
         explicit GameRectangle(QQuickItem *parent = 0);
+
+        enum DirEnum { None, ToLeft, ToRight };
 
         /*----Setters and getters----*/
         int direction() const;

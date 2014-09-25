@@ -1,6 +1,8 @@
 #include "gamerectangle.h"
 
-GameRectangle::GameRectangle(QQuickItem *parent): QQuickItem(parent) {}
+GameRectangle::GameRectangle(QQuickItem *parent): QQuickItem(parent) {
+    p_direction = 0;
+}
 
 int GameRectangle::direction() const {
     return p_direction;

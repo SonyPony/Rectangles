@@ -11,9 +11,5 @@ ApplicationWindow {
 
     Game {
         id: game
-
-        RectangleContainer {
-            id: container
-        }
     }
 }

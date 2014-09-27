@@ -4,5 +4,7 @@
         <file>logic/containerLogic.js</file>
         <file>components_dynamic/gameRectangle.qml</file>
         <file>logic/generalLogic.js</file>
+        <file>res/fonts/Fleftex_M.ttf</file>
+        <file>components_static/Graphics.qml</file>
     </qresource>
 </RCC>

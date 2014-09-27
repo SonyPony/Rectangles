@@ -1,12 +1,17 @@
 #include "gamerectangle.h"
+#include <QPainter>
 
 GameRectangle::GameRectangle(QQuickItem *parent): QQuickPaintedItem(parent) {
-    p_direction = GameRectangle.None;
+    p_direction = GameRectangle::None;
     p_speed = 0;
+    p_color = "#CCCCCC";
 }
 
 void GameRectangle::paint(QPainter *painter) {
-
+    painter->setPen(QPen(p_color, 2));
+    painter->setBrush(QBrush(p_color));
+    painter->setRenderHint(QPainter::Antialiasing, false);
+    painter->drawRect(boundingRect().adjusted(1, 1, -1, -1));
 }
 
 QColor GameRectangle::color() const {

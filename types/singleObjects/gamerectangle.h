@@ -23,7 +23,7 @@ class GameRectangle : public QQuickPaintedItem
 
         enum DirEnum { None, ToLeft, ToRight };
 
-        virtual void paint(QPainter* painter);
+        void paint(QPainter* painter);
 
         /*----Setters and getters----*/
         int direction() const;

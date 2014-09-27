@@ -1,6 +1,8 @@
 #include "rectanglecontainer.h"
 
-RectangleContainer::RectangleContainer(QQuickItem *parent): QQuickItem(parent) {}
+RectangleContainer::RectangleContainer(QQuickItem *parent): QQuickItem(parent) {
+    p_size = 1;
+}
 
 int RectangleContainer::size() const {
     return p_size;

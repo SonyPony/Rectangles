@@ -1,7 +1,16 @@
 #include "gamerectangle.h"
 
-GameRectangle::GameRectangle(QQuickItem *parent): QQuickItem(parent) {
-    p_direction = 0;
+GameRectangle::GameRectangle(QQuickItem *parent): QQuickPaintedItem(parent) {
+    p_direction = GameRectangle.None;
+    p_speed = 0;
+}
+
+void GameRectangle::paint(QPainter *painter) {
+
+}
+
+QColor GameRectangle::color() const {
+    return p_color;
 }
 
 int GameRectangle::direction() const {
@@ -10,6 +19,13 @@ int GameRectangle::direction() const {
 
 qreal GameRectangle::speed() const {
     return p_speed;
+}
+
+void GameRectangle::setColor(QColor &newValue) {
+    if(p_color != newValue) {
+        p_color = newValue;
+        emit colorChanged();
+    }
 }
 
 void GameRectangle::setDirection(int &newValue) {

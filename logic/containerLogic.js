@@ -5,5 +5,6 @@ function init() {
         component = Qt.createComponent("../components_dynamic/gameRectangle.qml");
 
         rectangleContainer.objects[i] = component.createObject(rectangleContainer);
+        rectangleContainer.objects[i].x = root.width/2-rectangleContainer.objects[i].width/2;
     }
 }

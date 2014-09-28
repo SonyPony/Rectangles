@@ -1,10 +1,12 @@
-import QtQuick 2.0
+import QtQuick 2.2
 import GameRectangle 1.0
 
 import "../logic/generalLogic.js" as GL
 
 GameRectangle {
     id: gameRectangle
+
+    x: root.width/2-gameRectangle.width/2
 
     width: 50
     height: width
@@ -20,14 +22,18 @@ GameRectangle {
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
+    NumberAnimation { objectName: "moveAnimation"; target: gameRectangle;property: "x" }
+
     MouseArea {
         anchors.fill: parent
 
-        onClicked: {
-            if(gameRectangle.x + mouse.x>root.width/2)
-                console.log("Hráč 1");
-            else
-                console.log("Hráč 2");
+        onPressed: {
+            if(gameRectangle.x + mouse.x<root.width/2 && (direction == GameRectangle.ToLeft || direction == GameRectangle.None)) {
+                gameRectangle.changeDirection(GameRectangle.ToRight)
+            }
+            else if(gameRectangle.x + mouse.x>=root.width/2 && (direction == GameRectangle.ToRight || direction == GameRectangle.None)) {
+                gameRectangle.changeDirection(GameRectangle.ToLeft)
+            }
         }
     }
 }

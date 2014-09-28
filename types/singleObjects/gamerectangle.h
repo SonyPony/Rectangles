@@ -17,12 +17,14 @@ class GameRectangle : public QQuickPaintedItem
         qreal p_speed;
         QColor p_color;
         int p_direction;
+        static const int koeficient = 500;
 
     public:
         explicit GameRectangle(QQuickItem *parent = 0);
 
         enum DirEnum { None, ToLeft, ToRight };
 
+        Q_INVOKABLE void changeDirection(int arg_Direction);
         void paint(QPainter* painter);
 
         /*----Setters and getters----*/

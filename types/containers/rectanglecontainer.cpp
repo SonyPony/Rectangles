@@ -1,7 +1,7 @@
 #include "rectanglecontainer.h"
 
 RectangleContainer::RectangleContainer(QQuickItem *parent): QQuickItem(parent) {
-    p_size = 1;
+    p_size = 10;
 }
 
 int RectangleContainer::size() const {

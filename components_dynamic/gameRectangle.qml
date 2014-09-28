@@ -6,9 +6,7 @@ import "../logic/generalLogic.js" as GL
 GameRectangle {
     id: gameRectangle
 
-    x: root.width/2-gameRectangle.width/2
-
-    width: 50
+    width: root.height*GL.fraction(50, 480)
     height: width
 
     Text {
@@ -22,7 +20,7 @@ GameRectangle {
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    NumberAnimation { objectName: "moveAnimation"; target: gameRectangle;property: "x" }
+    NumberAnimation { objectName: "moveAnimation"; target: gameRectangle; property: "x" }
 
     MouseArea {
         anchors.fill: parent

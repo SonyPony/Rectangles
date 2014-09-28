@@ -30,8 +30,9 @@ ApplicationWindow {
             /*---Game rectangles---*/
             property var objects: new Array
             /*---------------------*/
-
-            Component.onCompleted: ContainerLogic.init()
         }
     }
+
+    onHeightChanged: if(root.height && !rectangleContainer.inited)
+                            ContainerLogic.init()
 }

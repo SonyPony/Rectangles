@@ -1,6 +1,8 @@
 .import "generalLogic.js" as GL
 
 function init() {
+    rectangleContainer.inited = true
+
     var component;
     var spacing = root.height*GL.fraction(10, 480);
     var columnHeight = (rectangleContainer.size/2) * (spacing + root.height*GL.fraction(50, 480));

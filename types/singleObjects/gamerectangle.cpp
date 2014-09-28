@@ -12,17 +12,22 @@ void GameRectangle::changeDirection(int arg_Direction = 0) {
 
     if(p_speed != 9.9)
         this->setProperty("speed", p_speed+0.1);
+
     p_direction = arg_Direction;
     p_color = (p_direction == GameRectangle::ToLeft) ?"#FFC90E" :"#B5E61D";
+    qreal track;
 
     animation->setProperty("running", false);
-    animation->setProperty("duration", 5000.0-koeficient*p_speed);
 
     if(arg_Direction == GameRectangle::ToLeft)
         animation->setProperty("to", 0);
 
     else if(arg_Direction == GameRectangle::ToRight)
         animation->setProperty("to", this->parent()->property("width").toInt()-this->property("width").toInt());
+
+    track = abs(this->property("x").toInt() - animation->property("to").toInt());
+    animation->setProperty("duration", (5000.0-koeficient*p_speed)*(track/this->parent()->property("width").toDouble()));
+
     QMetaObject::invokeMethod(animation, "start");
     this->update();
 }

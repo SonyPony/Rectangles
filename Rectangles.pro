@@ -19,3 +19,8 @@ HEADERS += \
     types/game.h \
     types/containers/rectanglecontainer.h \
     types/singleObjects/gamerectangle.h
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+
+OTHER_FILES += \
+    android/AndroidManifest.xml
